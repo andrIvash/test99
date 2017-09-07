@@ -16,22 +16,22 @@ const webpackConfig = require('./webpack.config.js')
 
 // для удобства все пути в одном месте
 const paths = {
-    root: './build',
+    root: './docs',
     styles: {
         src: 'src/styles/**/*.scss',
-        dest: 'build/assets/styles/'
+        dest: 'docs/assets/styles/'
     },
     scripts: {
         src: 'src/scripts/**/*.js',
-        dest: 'build/assets/scripts/'
+        dest: 'docs/assets/scripts/'
     },
     templates: {
         src: 'src/templates/**/*.pug',
-        dest: 'build/assets/'
+        dest: 'docs/assets/'
     },
     images: {
         src: 'src/images/**/*.*',
-        dest: 'build/assets/images/'
+        dest: 'docs/assets/images/'
     }
 };
 
