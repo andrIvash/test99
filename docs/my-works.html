@@ -8,6 +8,7 @@
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <link rel="stylesheet" href="assets/styles/app.min.css">
+    <script src="https://unpkg.com/vue"></script>
     <script src="assets/scripts/bundle.js" defer></script>
   </head>
   <body>
@@ -30,5 +31,14 @@
       <li><a href="/my-works.html">Мои работы</a></li>
       <li><a href="/blog.html">Блог</a></li>
     </ul>
+    <div id="app">
+      <hello :text="text" :show="loading" @clicked="wasClicked"></hello>
+    </div>
+    <script type="text/x-template" id="hello-template">
+      <div class="hello">
+        <h1 class="title" @click="onClick">{{text}}</h1>
+        <div class="spinner" v-show="show"><img src="assets/images/spinner.gif"></div>
+      </div>
+    </script>
   </body>
 </html>

@@ -2,6 +2,24 @@ body{
     margin: 10px;
     background: #ccc
 }
+.error {
+    border: 1px solid red;
+}
+
+.spinner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: white;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 @import 'common/technologies';
 @import 'common/slider';
