@@ -20,8 +20,8 @@ form.addEventListener('submit', function(){
 new Vue({
   el: '#app',
   data: {
-    loading: true,
-    text: 'Hello All!!!'
+    loading: false,
+    text: 'Hello All from Vue!!!'
   },
 
   components: {
@@ -29,16 +29,20 @@ new Vue({
   },
 
   mounted: function() {
-    console.log('Running App version ! ');
+    console.log('Running App version 1.0 ! ');
     // ajax
     const that = this;
-    setTimeout(function(){  
-      that.loading = false;
-    }, 5000);
+    // setTimeout(function(){  
+    //   that.loading = false;
+    // }, 5000);
   },
   methods: {
     wasClicked: function(msg) {
       console.log('parent click' ,msg);
+    },
+    wasSubmited: function(msg) {
+      console.log('parent click' ,msg);
+      // this.send('localhost:3000/api/user', msg)
     }
   }
 })

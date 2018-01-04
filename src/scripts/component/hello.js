@@ -5,7 +5,10 @@ module.exports =  {
 
   data: function() {
     return {
-      msg: 'result'
+      msg: 'result',
+      name: 'enter name',
+      age: 'enter age',
+      email: 'enter email'
     };
   },
 
@@ -14,8 +17,16 @@ module.exports =  {
   },
   methods: {
     onClick: function() {
-      this.$emit('clicked', msg);
+      this.$emit('clicked', {code: 200, msg:'OK'});
       console.log('clicked');
+    },
+    onSubmit: function() {
+      this.$emit('submited', {
+        name: this.name,
+        age: this.age,
+        email: this.email
+      });
+      console.log('submit');
     }
   }
 }

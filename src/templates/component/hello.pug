@@ -3,3 +3,8 @@ script(type="text/x-template" id="hello-template")
         h1.title(@click="onClick") {{text}}
         .spinner(v-show="show")
             img(src="assets/images/spinner.gif")
+        form#newform(@submit.prevent="onSubmit")
+            input(v-model="name")
+            input(v-model="age")
+            input(v-model="email")
+            button(type="submit") Send

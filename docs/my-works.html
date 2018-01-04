@@ -8,7 +8,6 @@
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <link rel="stylesheet" href="assets/styles/app.min.css">
-    <script src="https://unpkg.com/vue"></script>
     <script src="assets/scripts/bundle.js" defer></script>
   </head>
   <body>
@@ -32,12 +31,18 @@
       <li><a href="/blog.html">Блог</a></li>
     </ul>
     <div id="app">
-      <hello :text="text" :show="loading" @clicked="wasClicked"></hello>
+      <hello :text="text" :show="loading" @clicked="wasClicked" @submited="wasSubmited"></hello>
     </div>
     <script type="text/x-template" id="hello-template">
       <div class="hello">
         <h1 class="title" @click="onClick">{{text}}</h1>
         <div class="spinner" v-show="show"><img src="assets/images/spinner.gif"></div>
+        <form id="newform" @submit.prevent="onSubmit">
+          <input v-model="name">
+          <input v-model="age">
+          <input v-model="email">
+          <button type="submit">Send</button>
+        </form>
       </div>
     </script>
   </body>
