@@ -5,18 +5,14 @@ const routes = require('./routes');
 
 app.set('views', './src/templates/pages/');
 app.set('view engine', 'pug');
-
-
-
 app.use(express.static('./docs/'));
+
 app.use('/', routes);
 
+app.get('*', (req, res) => {
+  res.render('error', { title: '404'})
+})
 
-app.use(function(req, res, next) {
-  var err = new Error(404, 'Sorry, Page Not Found');
-  console.log(err);
-});
-
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!')
+app.listen(3002, function () {
+  console.log('Example app listening on port 3002!')
 })

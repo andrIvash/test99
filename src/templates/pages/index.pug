@@ -1,9 +1,10 @@
 extends ../template
 
 block variables
-  - var title = 'Добро пожаловать'
+  //- var title = 'Добро пожаловать'
 
 block content
+  p #{title}
   h1 Главная
   form#form
     label(for="email") 
