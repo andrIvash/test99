@@ -13,8 +13,20 @@ html
     //- favicon block start
     //- favicon block end
     link(rel='stylesheet' href='assets/styles/app.min.css')
+    //- script(src='https://unpkg.com/vue')
     script(src='assets/scripts/bundle.js' defer)
 
   body
-    block content
-    include common/menu.pug
+      
+      block content
+      include common/menu.pug
+      #app
+        hello(
+          :text="text",
+          :show="loading"
+          @clicked="wasClicked"
+          @submited="wasSubmited"
+        )
+
+
+      include component/hello

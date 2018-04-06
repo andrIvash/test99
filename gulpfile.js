@@ -81,8 +81,8 @@ function watch() {
 // следим за build и релоадим браузер
 function server() {
     browserSync.init({
-        server: paths.root
-            
+        server: paths.root,
+        open: false
     });
     browserSync.watch(paths.root + '/**/*.*', browserSync.reload);
 }
@@ -99,7 +99,7 @@ exports.server = server;
 // сборка и слежка
 gulp.task('default', gulp.series(
     clean,
-    gulp.parallel(styles, scripts, templates, images),
+    gulp.parallel(styles, scripts, images),
     gulp.parallel(watch, server)
 ));
 
