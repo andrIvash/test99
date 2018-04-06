@@ -99,7 +99,7 @@ exports.server = server;
 // сборка и слежка
 gulp.task('default', gulp.series(
     clean,
-    gulp.parallel(styles, scripts, images),
+    gulp.parallel(templates, styles, scripts, images),
     gulp.parallel(watch, server)
 ));
 

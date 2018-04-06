@@ -17,33 +17,33 @@ form.addEventListener('submit', function(){
   }
 });
 
-// new Vue({
-//   el: '#app',
-//   data: {
-//     loading: false,
-//     text: 'Hello All from Vue!!!'
-//   },
+new Vue({
+  el: '#app',
+  data: {
+    loading: false,
+    text: 'Hello All from Vue!!!'
+  },
 
-//   components: {
-//     hello: require('./component/hello')
-//   },
+  components: {
+    hello: require('./component/hello')
+  },
 
-//   mounted: function() {
-//     console.log('Running App version 1.0 ! ');
-//     // ajax
-//     const that = this;
-//     // setTimeout(function(){  
-//     //   that.loading = false;
-//     // }, 5000);
-//   },
-//   methods: {
-//     wasClicked: function(msg) {
-//       console.log('parent click' ,msg);
-//     },
-//     wasSubmited: function(msg) {
-//       console.log('parent click' ,msg);
-//       // this.send('localhost:3000/api/user', msg)
-//     }
-//   }
-// })
+  mounted: function() {
+    console.log('Running App version 1.0 ! ');
+    // ajax
+    const that = this;
+    // setTimeout(function(){  
+    //   that.loading = false;
+    // }, 5000);
+  },
+  methods: {
+    wasClicked: function(msg) {
+      console.log('parent click' ,msg);
+    },
+    wasSubmited: function(msg) {
+      console.log('parent click' ,msg);
+      // this.send('localhost:3000/api/user', msg)
+    }
+  }
+})
 
