@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
 
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 const routes = require('./routes');
 
 app.set('views', './src/templates/pages/');
@@ -10,7 +13,7 @@ app.use(express.static('./docs/'));
 app.use('/', routes);
 
 app.get('*', (req, res) => {
-  res.render('error', { title: '404'})
+  res.render('error', { title: '404, not found'})
 })
 
 app.listen(3002, function () {

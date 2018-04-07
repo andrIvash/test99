@@ -28,6 +28,11 @@ router.get('/my-works', function (req, res) {
   //res.send('Hello World!')
   res.render('my-works', { title: 'Hey', message: 'Hello there!' })
 });
+router.post('/api/user', function (req, res) {
+  console.log(req.body.data);
+  const newData = req.body.data;
+  res.send({status: 200, msg:'Hello World!'})
+});
 
 
 module.exports = router

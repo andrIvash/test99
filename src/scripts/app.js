@@ -42,7 +42,31 @@ new Vue({
     },
     wasSubmited: function(msg) {
       console.log('parent click' ,msg);
-      // this.send('localhost:3000/api/user', msg)
+      this.send('http://localhost:3002/api/user', msg)
+      .then(function(response) {
+        console.log("Success!", response);
+      }, function(error) {
+        console.error("Failed!", error);
+      });
+    },
+    send: function (url, data) {
+      return new Promise(function(resolve, reject) {
+          var req = new XMLHttpRequest();
+          req.open('POST', url);
+          req.setRequestHeader('content-type', 'application/json'); // очень важно укзать заголовок !!!
+          req.onload = function() {
+              if (req.status == 200) {
+                  resolve(req.response);  // в случае успеха получаем ответ сервера
+              }
+              else {
+                  reject(Error(req.statusText));
+              }
+          };
+          req.onerror = function() {
+              reject(Error("Network Error"));
+          };
+          req.send(JSON.stringify({"data": data})); // формируем итоговый обьект для отсылки
+      });
     }
   }
 })
